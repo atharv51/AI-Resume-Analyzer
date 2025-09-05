@@ -1,11 +1,12 @@
-import type { Route } from "./+types/home";
+//this import line means that we are importing the Route type from a file named +types/home in the current directory. and
+// import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
 import {usePuterStore} from "~/lib/puter";
 import {Link, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
-
-export function meta({}: Route.MetaArgs) {
+ 
+export function meta() {//{}: Route.MetaArgs
   return [
     { title: "Resumind" },
     { name: "description", content: "Smart feedback for your dream job!" },
@@ -41,7 +42,6 @@ export default function Home() {
 
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />
-
     <section className="main-section">
       <div className="page-heading py-16">
         <h1>Track Your Applications & Resume Ratings</h1>

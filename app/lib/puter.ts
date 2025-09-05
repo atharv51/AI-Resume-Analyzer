@@ -8,7 +8,7 @@ declare global {
                 isSignedIn: () => Promise<boolean>;
                 signIn: () => Promise<void>;
                 signOut: () => Promise<void>;
-            };
+            }; 
             fs: {
                 write: (
                     path: string,
@@ -42,7 +42,7 @@ declare global {
     }
 }
 
-interface PuterStore {
+interface PuterStore {//used by zustand to define the store, a place that can be accessible from anywhee from the app "here we define/store the functions that we will use to interact with puter.js"
     isLoading: boolean;
     error: string | null;
     puterReady: boolean;
@@ -99,6 +99,7 @@ interface PuterStore {
 const getPuter = (): typeof window.puter | null =>
     typeof window !== "undefined" && window.puter ? window.puter : null;
 
+//it is a hook that can be used in any component to access the store and its values/functions , like auth status , read/write files , chat with AI etc
 export const usePuterStore = create<PuterStore>((set, get) => {
     const setError = (msg: string) => {
         set({

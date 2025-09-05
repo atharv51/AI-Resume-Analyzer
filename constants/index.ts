@@ -180,7 +180,7 @@ export const resumes: Resume[] = [
         },
     },
 ];
-
+// AI response format for resume feedback , itis a string explaination of how later on we want AI the data to us .
 export const AIResponseFormat = `
       interface Feedback {
       overallScore: number; //max 100
